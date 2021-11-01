@@ -1,5 +1,5 @@
 class Patient < ApplicationRecord
-  has_many :vaccinations
+  has_many :vaccinations, dependent: :destroy
   before_save :my_method
   validates :run, uniqueness: true
   validates :name, :last_name, :birth_date, :run, presence: true

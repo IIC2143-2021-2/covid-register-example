@@ -10,6 +10,21 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="header">
+      <div id="title">
+        <%= link_to 'Covid Register', patients_path %>
+      </div>
+      <div id="nav">
+        <div class="nav-button"><%= link_to 'Nuevo paciente', new_patient_path %></div>
+        <div class="nav-button"><a href="/"><%= 'Asistencia' %></a></div>
+        <div class="nav-button"><a href="/"><%= 'Aprende sobre COVID' %></a></div>
+      </div>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+    <div id="footer">
+      Esta aplicación está creada para el curso Ingeniería de Software 2021
+    </div>
   </body>
 </html>

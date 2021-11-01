@@ -1,0 +1,20 @@
+<h2>Vacunas</h2>
+
+<div class="vaccinations">
+  <% if patient.vaccinations.empty? %>
+    <p>Sin vacunas</p>
+  <% else %>
+    <% patient.vaccinations.each do |vaccination| %>
+      <div class="vaccination-box">
+        <p><%= vaccination.vaccine %></p>
+        <p><%= vaccination.appointment_date.strftime("%d/%m/%y") %></p>
+        <p>Dosis: <%= vaccination.dose %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<% if patient.vaccinations.size < 3 %>
+<h2> Agregar nuevo proceso</h2>
+  <%= render partial: "vaccinations/form", locals: {patient: patient} %>
+<% end %>

@@ -4,7 +4,7 @@
     <div>
       <h2>
         <%= pluralize(@patient.errors.count, "error") %> prohibited
-        this patient from being saved:
+        No se pudo guardar al paciente porque:
       </h2>
       <ul>
         <% @patient.errors.full_messages.each do |msg| %>
@@ -39,7 +39,7 @@
   </p>
 
   <p>
-    <%= form.submit %>
+    <%= form.submit 'Guardar', class: 'button full-width' %>
   </p>
 
 <% end %>
